@@ -104,7 +104,6 @@ export async function registerClient(
       redirect_uris: redirects,
       grant_types: ["authorization_code", "refresh_token"],
       response_types: ["code"],
-      token_endpoint_auth_methods_supported: undefined,
       token_endpoint_auth_method: "none",
       client_secret_expires_at: 0,
     },
