@@ -77,7 +77,8 @@ export function renderCopy(template: string, lead: RenderLead, seed: string): st
       const key = inner.trim().toUpperCase();
       const underscored = key.replace(/\s+/g, "_");
       if (vars.has(key)) return vars.get(key) ?? "";
-      if (vars.has(underscored)) return vars.get(underscored) ?? "";      return "";
+      if (vars.has(underscored)) return vars.get(underscored) ?? "";
+      return "";
     });
     if (!replaced) break;
   }
@@ -156,7 +157,8 @@ function scanText(
 
 function groupSteps(steps: CopyStep[]): CopyStep[][] {
   const groups = new Map<number, CopyStep[]>();
-  steps.forEach((step, index) => {    const order = step.order ?? index + 1;
+  steps.forEach((step, index) => {
+    const order = step.order ?? index + 1;
     const list = groups.get(order) ?? [];
     list.push(step);
     groups.set(order, list);
@@ -236,6 +238,7 @@ export function checkCopy(
 
   return dedupe(violations);
 }
+
 function dedupe(violations: CopyViolation[]): CopyViolation[] {
   const seen = new Set<string>();
   const unique: CopyViolation[] = [];
