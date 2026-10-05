@@ -1,0 +1,1 @@
+Full oauth.ts + campaigns.ts ready at box /workspace/tce-emailbison-rep-connector/src/lib/ and MCP payloads /tmp/tce-batches/mcp_oauth.ts.json + mcp_campaigns.ts.json. Parent should CallDynamicTool user-GitHub-xai push_files with those JSON args.
